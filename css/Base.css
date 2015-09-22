@@ -533,3 +533,7 @@
 .block{
     display: block;
 }
+
+.mauto{
+    margin: auto;
+}
