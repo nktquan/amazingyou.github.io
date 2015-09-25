@@ -1,3 +1,4 @@
+new WOW().init();
 function fbLoading(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -10,13 +11,24 @@ setTimeout(function(){fbLoading(document, 'script', 'facebook-jssdk');},3000);
 $(document).ready(function () {
     $('.parallax').parallax();
     $(".button-collapse").sideNav();
-    //$('.scrolly').scrolly();
     $('.slider').slider({full_width: true});
     $('input#input_text, textarea#textarea1').characterCounter();
-    //setTimeout(attachGoogleForm, 3000);
+    $('.modal-trigger').leanModal();
+    $('#info').openModal();
+    $('#info').closeModal();
 });
-//
-//var attachGoogleForm = function() {
-//    $('#google-form').html('<iframe src="https://docs.google.com/forms/d/1irJSbaGavvMLdTqSsUu7raN9wId7srrF-kCb5fTre-c/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Đang tải...</iframe>');
-//}
-new WOW().init();
+
+function onScroll(event){
+    var scrollPos = $(document).scrollTop();
+    $('.navbar-nav li a').each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('.navbar-nav li').removeClass("active");
+            currLink.addClass("active");
+        }
+        else{
+            currLink.removeClass("active");
+        }
+    });
+}
