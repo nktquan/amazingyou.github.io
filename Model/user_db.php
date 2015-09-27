@@ -9,7 +9,7 @@ function get_all_user(){
 
 function add_user($name, $email, $phone) {
     global $db;
-    $sql = "INSERT INTO user(name,email,phone) VALUES($name, $email, $phone)";
+    $sql = "INSERT INTO user(name,email,phone) VALUES('$name', '$email', '$phone')";
     $user = $db->exec($sql);
     return $user;
 }
