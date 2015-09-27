@@ -262,23 +262,26 @@ footer.page-footer{
     width: 100%;
     height: 550px;
     background-size: cover;
-    background-position: center center;
 }
 
 .a2{
     background-image: url("./../images/A2.png");
+    background-position: center center;
 }
 
 .a3{
     background-image: url("./../images/A6.png");
+    background-position: center center;
 }
 
 .a4{
     background-image: url("./../images/A4.png");
+    background-position: top center;
 }
 
 .a5{
     background-image: url("./../images/A5.png");
+    background-position: center center;
 }
 
 
