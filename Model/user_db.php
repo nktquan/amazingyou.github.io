@@ -28,4 +28,20 @@ function del_user($id){
     $user = $db->exec($sql);
     return $user;
 }
+
+function get_user_by_mail($email){
+    global $db;
+    $sql = "SELECT * FROM user WHERE email='$email'";
+    $user = $db->query($sql);
+    $user = $user->fetch();
+    return $user;
+}
+
+function get_user_by_phone($phone){
+    global $db;
+    $sql = "SELECT * FROM user WHERE phone='$phone'";
+    $user = $db->query($sql);
+    $user = $user->fetch();
+    return $user;
+}
 ?>

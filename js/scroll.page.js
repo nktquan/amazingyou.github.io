@@ -3,37 +3,63 @@
 
     $(function(){
         ScrollPage();
+        $("button#submit").click(function(){
+            if (!ValidateForm())return false;
+            var url = "index.php";
+            var data = {
+                name: $("#fullname").val(),
+                email: $("#email").val(),
+                phone: $("#phone").val(),
+            }
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                success: function(data) {
+                    var result = JSON.parse(data)
+                    if(result.insert){
+                        alert("Đăng ký thành công");
+                    }
+                    else{
+                        alert(result.msg);
+                    }
+                      //called when successful
+//                      $('#ajaxphp-results').html(data);
+                },
+                error: function(e) {
+                      //called when there is an error
+                      //console.log(e.message);
+                }
+            });
+
+        });
+
     });//Document ready
 
 
-//    ValidateForm = function()
-//    {
-//        function validateFullName(e) {
-//            var name = $(this).val();
-//            var emailReg = /^[a-zA-Z'.\s]{1,50}/;
-//            var res = emailReg.test(name);
-//            console.log(res);
-//            return res;
+    ValidateForm = function()
+    {
+        var strError = "";
+//        var nameReg = /^[a-zA-Z'.\s]{1,50}/;
+//        if(!nameReg.test($("#fullname").val()))
+//        {
+//            strError += "loi nhap ten\n";
 //        }
-//        function validateEmail(e) {
-//            var str = $(this).val();
-//            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-//            if(!emailReg.test(str)){
-//                $(this).addClass('invalid');
-//            }
-//        }
-//        function validatePhone(e) {
-//            var str = $(this).val();
-//            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-//            var res = emailReg.test(str);
-//            console.log(res);
-//            return res;
-//        }
-//
-//        $('#fullname').change(validateFullName);
-//        $('#email').change(validateEmail);
-//        $('#phone').change(validatePhone);
-//    }
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4}){1}?$/;
+        if(!emailReg.test($("#email").val())){
+            strError += "Mail nhập không đúng định dạng\n";
+        }
+        var phoneReg = /^[0-9]{8,12}$/;
+        if(!phoneReg.test($("#phone").val())){
+            strError += "Điện thoại nhập 8-12 ký tự số";
+        }
+        if (strError !== ""){
+            alert(strError);
+            return false;
+        }else{
+            return true;
+        }
+    }
     
     
     ScrollPage = function ()
