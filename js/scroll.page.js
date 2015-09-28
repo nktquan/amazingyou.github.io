@@ -48,23 +48,23 @@
             var t = $(window).scrollTop();
             var page = "";
             if(t >= page_different){
-                var page = "#different";
+                var page = "#different-nav";
             }
             if(t >= page_team){
-                var page = "#team";
+                var page = "#team-nav";
             }
             if(t >= page_you_rock){
-                var page = "#you-rock";
+                var page = "#yourock-nav";
             }
             if(t >= page_join){
-                var page = "#join";
+                var page = "#join-nav";
             }
             if(t >= page_contact){
-                var page = "#contact";
+                var page = "#contact-nav";
             }
             if(page !== ""){
-                $("#top > ul > li > a").removeClass("red-text");
-                $("#top > ul > li > a[href="+page+"]").addClass("red-text");
+                $("#top > ul > li").removeClass("active");
+                $("#top > ul > li"+page).addClass("active");
             }
         });
     }

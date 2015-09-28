@@ -39,19 +39,19 @@ if (isset($_POST['submit'])) {
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
             <ul class="right hide-on-med-and-down nav navbar-nav">
                 <li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
-                <li><a href="#different" class="page-scroll">Sự khác biệt</a></li>
-                <li><a href="#team" class="page-scroll">Team</a></li>
-                <li><a href="#you-rock" class="page-scroll">You Rock - The Club</a></li>
-                <li><a href="#join" class="red-text page-scroll">Đăng ký học !</a></li>
-                <li><a href="#contact" class="page-scroll">Liên hệ</a></li>
+                <li id="different-nav"><a href="#different" class="page-scroll">Sự khác biệt</a></li>
+                <li id="team-nav"><a href="#team" class="page-scroll">Team</a></li>
+                <li id="yourock-nav"><a href="#you-rock" class="page-scroll">You Rock - The Club</a></li>
+                <li id="join-nav"><a href="#join" class="red-text page-scroll">Đăng ký học !</a></li>
+                <li id="contact-nav"><a href="#contact" class="page-scroll">Liên hệ</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
-                <li><a href="#different" class="page-scroll">Sự khác biệt</a></li>
-                <li><a href="#team" class="page-scroll">Team</a></li>
-                <li><a href="#you-rock" class="page-scroll">You Rock - The Club</a></li>
-                <li><a href="#join" class="red-text page-scroll">Đăng ký học !</a></li>
-                <li><a href="#contact" class="page-scroll">Liên hệ</a></li>
+                <li id="different-nav"><a href="#different" class="page-scroll">Sự khác biệt</a></li>
+                <li id="team-nav"><a href="#team" class="page-scroll">Team</a></li>
+                <li id="yourock-nav"><a href="#you-rock" class="page-scroll">You Rock - The Club</a></li>
+                <li id="join-nav"><a href="#join" class="red-text page-scroll">Đăng ký học !</a></li>
+                <li id="contact-nav"><a href="#contact" class="page-scroll">Liên hệ</a></li>
             </ul>
         </div>
     </nav>
@@ -210,15 +210,15 @@ if (isset($_POST['submit'])) {
             <div class="row">
                 <form class="col l6 m10 s10 offset-s1 offset-m1 center-align" action="index.php" method="post">
                     <div class="input-field row">
-                        <input placeholder="Điền họ tên của bạn" id="fullname" name="fullname" type="text" class="validate" length="100" required>
+                        <input placeholder="Điền họ tên của bạn" id="fullname" name="fullname" type="text" class="validate" length="100">
                         <label for="fullname">Họ tên</label>
                     </div>
                     <div class="input-field row">
-                        <input placeholder="Email của bạn" id="email" name="email" type="text" class="validate" length="200" required>
+                        <input placeholder="Email của bạn" id="email" name="email" type="text" class="validate" length="200">
                         <label for="email">Email</label>
                     </div>
                     <div class="input-field row">
-                        <input placeholder="Số điện thoại" id="phone" name="phone" type="text" class="validate" length="20" required>
+                        <input placeholder="Số điện thoại" id="phone" name="phone" type="text" class="validate" length="20">
                         <label for="phone">Số điện thoại</label>
                     </div>
                     <button type="submit" name="submit" class="waves-effect waves-red btn btn-large red-text ghost-btn">Đăng ký</button>
