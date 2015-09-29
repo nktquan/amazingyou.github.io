@@ -19,6 +19,7 @@
                     var result = JSON.parse(data)
                     if(result.insert){
                         alert("Đăng ký thành công");
+                        location.reload(true);
                     }
                     else{
                         alert(result.msg);
